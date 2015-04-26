@@ -1,27 +1,31 @@
 class Bowling
   def initialize rolls
     @rolls = rolls
+    @current_roll_index = 0
   end
 
   def score
     score = 0
-    current_roll_index = 0
     1.upto(10) do |frame|
-      if is_spare current_roll_index
-        score += 10 + spare_bonus(current_roll_index)
+      if is_spare
+        score += 10 + spare_bonus
       else  
-        score += @rolls[current_roll_index].to_i + @rolls[current_roll_index+1].to_i
+        score += get_roll_score(@current_roll_index) + get_roll_score(@current_roll_index+1)
       end
-      current_roll_index += 2
+      @current_roll_index += 2
     end
     score 
   end
 
-  def is_spare roll_index
-    @rolls[roll_index + 1] == '/'
+  def get_roll_score index
+    @rolls[index].to_i
   end
 
-  def spare_bonus roll_index
-    @rolls[roll_index + 2].to_i
+  def is_spare
+    @rolls[@current_roll_index + 1] == '/'
+  end
+
+  def spare_bonus
+    get_roll_score(@current_roll_index + 2)
   end
 end
