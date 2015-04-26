@@ -5,4 +5,5 @@ group :development do
   gem 'guard-rspec'
   gem 'simplecov', require: false
   gem 'rubocop'
+  gem 'rake'
 end
