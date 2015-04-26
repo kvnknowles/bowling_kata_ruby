@@ -15,9 +15,7 @@ class Bowling
 
   private
   def current_frame_score
-    return strike_frame_total if is_strike
-    return spare_frame_total if is_spare
-    non_mark_frame_total
+    is_strike ? strike_frame_total : is_spare ? spare_frame_total : non_mark_frame_total
   end
 
   def non_mark_frame_total
