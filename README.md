@@ -1,5 +1,13 @@
 #Bowling Kata
 
+##Execution
+* Running tests:
+
+  ```
+  bundle install
+  bundle exec rspec
+  ```
+
 ##Description
 From http://codingdojo.org/cgi-bin/index.pl?KataBowling
 
