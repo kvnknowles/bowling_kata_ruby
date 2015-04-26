@@ -7,12 +7,16 @@ class Bowling
   def score
     score = 0
     1.upto(10) do |frame|
-      if is_spare
+      if @rolls[@current_roll_index] == 'X'
+        score += 10 + get_roll_score(@current_roll_index + 1) + get_roll_score(@current_roll_index + 2)
+        @current_roll_index += 1
+      elsif is_spare
         score += 10 + spare_bonus
+        @current_roll_index += 2
       else  
         score += get_roll_score(@current_roll_index) + get_roll_score(@current_roll_index+1)
+        @current_roll_index += 2
       end
-      @current_roll_index += 2
     end
     score 
   end
