@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/kvnknowles/bowling_kata_ruby/badges/gpa.svg)](https://codeclimate.com/github/kvnknowles/bowling_kata_ruby) [![Build Status](https://travis-ci.org/kvnknowles/bowling_kata_ruby.svg)](https://travis-ci.org/kvnknowles/bowling_kata_ruby)
+[![Code Climate](https://codeclimate.com/github/kvnknowles/bowling_kata_ruby/badges/gpa.svg)](https://codeclimate.com/github/kvnknowles/bowling_kata_ruby) [![Test Coverage](https://codeclimate.com/github/kvnknowles/bowling_kata_ruby/badges/coverage.svg)](https://codeclimate.com/github/kvnknowles/bowling_kata_ruby) [![Build Status](https://travis-ci.org/kvnknowles/bowling_kata_ruby.svg)](https://travis-ci.org/kvnknowles/bowling_kata_ruby)
 
 #Bowling Kata
 
