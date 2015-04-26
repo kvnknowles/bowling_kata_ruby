@@ -8,8 +8,8 @@ class Bowling
     score = 0
     1.upto(10) do |frame|
       if is_strike
-        score += 10 + strike_bonus
         @current_roll_index += 1
+        score += 10 + strike_bonus
       elsif is_spare
         score += 10 + spare_bonus
         @current_roll_index += 2
@@ -34,7 +34,7 @@ class Bowling
   end
 
   def strike_bonus
-    get_roll_score(@current_roll_index + 1) + get_roll_score(@current_roll_index + 2)
+    is_spare ? 10 : get_roll_score(@current_roll_index) + get_roll_score(@current_roll_index + 1)
   end
 
   def spare_bonus
