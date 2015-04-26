@@ -10,23 +10,29 @@ class Bowling
   end
 
   def score
-    score = 0
-    1.upto(NUMBER_OF_FRAMES) do |frame|
-      if is_strike
-        @current_roll_index += 1
-        score += MAX_FRAME_SCORE + strike_bonus
-      elsif is_spare
-        @current_roll_index += 2
-        score += MAX_FRAME_SCORE + spare_bonus
-      else  
-        score += get_roll_score(@current_roll_index) + get_roll_score(@current_roll_index+1)
-        @current_roll_index += 2
-      end
+    final_score = 0
+    1.upto(NUMBER_OF_FRAMES) do
+      final_score += current_frame_score
     end
-    score 
+    final_score
   end
 
   private
+  def current_frame_score
+    score = 0
+    if is_strike
+      @current_roll_index += 1
+      score += MAX_FRAME_SCORE + strike_bonus
+    elsif is_spare
+      @current_roll_index += 2
+      score += MAX_FRAME_SCORE + spare_bonus
+    else  
+      score += get_roll_score(@current_roll_index) + get_roll_score(@current_roll_index+1)
+      @current_roll_index += 2
+    end
+    score
+  end
+
   def get_roll_score index
     is_strike ? MAX_FRAME_SCORE : @rolls[index].to_i
   end
