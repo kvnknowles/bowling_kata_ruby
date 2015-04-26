@@ -10,11 +10,7 @@ class Bowling
   end
 
   def score
-    final_score = 0
-    1.upto(NUMBER_OF_FRAMES) do
-      final_score += current_frame_score
-    end
-    final_score
+    (1..NUMBER_OF_FRAMES).inject(0) { |final_score| final_score += current_frame_score }
   end
 
   private
