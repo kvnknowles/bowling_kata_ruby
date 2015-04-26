@@ -8,4 +8,9 @@ describe Bowling, "#score" do
     game = Bowling.new '11111111111111111111'
     expect(game.score).to eq(20)
   end
+
+  it 'returns 19 with a spare followed by two threes' do
+    game = Bowling.new '5/33----------------'
+    expect(game.score).to eq(19)
+  end
 end

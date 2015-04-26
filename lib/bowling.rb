@@ -5,8 +5,14 @@ class Bowling
 
   def score
     score = 0
-    @rolls.each_char do |roll|
-      score += roll.to_i
+    current_roll_index = 0
+    1.upto(10) do |frame|
+      if @rolls[current_roll_index + 1] == '/'
+        score += 10 + @rolls[current_roll_index + 2].to_i
+      else  
+        score += @rolls[current_roll_index].to_i + @rolls[current_roll_index+1].to_i
+      end
+      current_roll_index += 2
     end
     score 
   end
