@@ -1,4 +1,9 @@
+[![Code Climate](https://codeclimate.com/github/kvnknowles/bowling_kata_ruby/badges/gpa.svg)](https://codeclimate.com/github/kvnknowles/bowling_kata_ruby)
+
 #Bowling Kata
+
+##Information
+Simple project to play around with various Ruby gems and tools
 
 ##Execution
 * Running tests:
