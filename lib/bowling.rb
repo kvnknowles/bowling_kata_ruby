@@ -18,12 +18,12 @@ class Bowling
     score = 0
     if is_strike
       @current_roll_index += 1
-      score += MAX_FRAME_SCORE + strike_bonus
+      score = MAX_FRAME_SCORE + strike_bonus
     elsif is_spare
       @current_roll_index += 2
-      score += MAX_FRAME_SCORE + spare_bonus
+      score = MAX_FRAME_SCORE + spare_bonus
     else  
-      score += get_roll_score(@current_roll_index) + get_roll_score(@current_roll_index+1)
+      score = get_roll_score(@current_roll_index) + get_roll_score(@current_roll_index+1)
       @current_roll_index += 2
     end
     score
