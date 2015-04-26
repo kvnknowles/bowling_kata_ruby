@@ -11,8 +11,8 @@ class Bowling
         @current_roll_index += 1
         score += 10 + strike_bonus
       elsif is_spare
-        score += 10 + spare_bonus
         @current_roll_index += 2
+        score += 10 + spare_bonus
       else  
         score += get_roll_score(@current_roll_index) + get_roll_score(@current_roll_index+1)
         @current_roll_index += 2
@@ -22,7 +22,7 @@ class Bowling
   end
 
   def get_roll_score index
-    @rolls[index].to_i
+    is_strike ? 10 : @rolls[index].to_i
   end
 
   def is_strike
@@ -38,6 +38,6 @@ class Bowling
   end
 
   def spare_bonus
-    get_roll_score(@current_roll_index + 2)
+    get_roll_score(@current_roll_index)
   end
 end

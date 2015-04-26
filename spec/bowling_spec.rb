@@ -23,4 +23,9 @@ describe Bowling, "#score" do
     game = Bowling.new 'X3/----------------'
     expect(game.score).to eq(30)
   end
+
+  it 'returns 30 for a spare followed by a single strike' do
+    game = Bowling.new '3/X----------------'
+    expect(game.score).to eq(30)
+  end
 end
