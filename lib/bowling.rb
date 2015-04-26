@@ -15,18 +15,25 @@ class Bowling
 
   private
   def current_frame_score
-    score = 0
-    if is_strike
-      @current_roll_index += 1
-      score = MAX_FRAME_SCORE + strike_bonus
-    elsif is_spare
-      @current_roll_index += 2
-      score = MAX_FRAME_SCORE + spare_bonus
-    else  
-      score = get_roll_score(@current_roll_index) + get_roll_score(@current_roll_index+1)
-      @current_roll_index += 2
-    end
+    return strike_frame_total if is_strike
+    return spare_frame_total if is_spare
+    non_mark_frame_total
+  end
+
+  def non_mark_frame_total
+    score = get_roll_score(@current_roll_index) + get_roll_score(@current_roll_index+1)
+    @current_roll_index += 2
     score
+  end
+
+  def strike_frame_total
+    @current_roll_index += 1
+    score = MAX_FRAME_SCORE + strike_bonus
+  end
+
+  def spare_frame_total
+    @current_roll_index += 2
+    score = MAX_FRAME_SCORE + spare_bonus
   end
 
   def get_roll_score index
