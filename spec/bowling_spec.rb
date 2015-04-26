@@ -28,4 +28,14 @@ describe Bowling, "#score" do
     game = Bowling.new '3/X----------------'
     expect(game.score).to eq(30)
   end
+
+  it 'returns 300 for a perfect game' do
+    game = Bowling.new 'XXXXXXXXXXXX'
+    expect(game.score).to eq(300)
+  end
+
+  it 'returns 150 for all fives' do
+    game = Bowling.new '5/5/5/5/5/5/5/5/5/5/5'
+    expect(game.score).to eq(150)
+  end
 end
