@@ -1,4 +1,7 @@
 source "https://rubygems.org"
 
-gem "rspec"
-gem "guard-rspec"
+group :development do
+  gem 'rspec'
+  gem "guard-rspec"
+  gem 'simplecov', :require => false
+end
